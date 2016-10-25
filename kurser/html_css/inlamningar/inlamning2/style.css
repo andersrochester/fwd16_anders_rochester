@@ -1,0 +1,173 @@
+
+html { 
+  background: url(Pictures/clouds-background-light.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#main {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+}
+
+#left-div {
+  width: 150px;
+  height: 1131px;
+  border: 1px solid black;
+  margin: 5px;
+}
+
+#left-div p { 
+  margin: 1em 1em 1em 1em;
+  font-family: arial;
+}
+
+#right-div {
+  width: 781px;
+  height: 1131px;
+  border: 1px solid black;
+  margin: 5px; 
+}
+
+#right-div p { 
+  margin: 1em 1em 1em 1em;
+  font-size: 18px;
+  font-family: arial;
+}
+
+header { 
+    background-color: transparent;
+    height: 150px;
+    width: 938px;
+    z-index: 100;
+    margin: 5px;
+    font-family: sans-serif;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer {
+    display: block;
+    width: 938px;
+    height: 50px;
+    border: 1px solid black;
+    margin: 5px;
+}
+
+/*Navigation Menu*/
+
+.sub-menu-parent { position: relative; 
+}
+
+.sub-menu { 
+  visibility: hidden;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-1em);
+  z-index: -1;
+  transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+}
+
+.sub-menu-parent:hover .sub-menu {
+  visibility: visible; 
+  opacity: 1;
+  z-index: 1;
+  transform: translateY(0%);
+  transition-delay: 0s, 0s, 0.3s;
+}
+
+nav a { 
+    color: #fff; 
+    display: block; 
+    padding: 0.3em .9em; 
+    text-decoration: none;
+    font-family: "arial";
+}
+
+nav a:hover { color: #ccc; }
+nav ul,
+nav ul li { list-style-type: none; padding: 0; margin: 0;
+    
+}
+nav > ul { text-align: center; 
+}
+nav > ul > li { display: inline-block; border-left: solid 1px #aaa;
+    padding: 0.2em .5em;
+    border-radius: 7px;
+    background-color: #ff9966;
+    box-shadow: 2px 2px #c07c00}
+nav > ul > li:first-child { border-left: none; }
+
+.sub-menu  a{
+display: block;
+  background: rgba(255, 153, 102, 0.65);
+        border-bottom-right-radius: 5px;
+
+}
+
+/*Special effects*/
+
+#special-effects {
+    background-color: rgba(252, 50, 50, 0.60);
+    width: 514px;
+    height: 130px;
+    border-radius: 10px 40px 10px 40px;
+    align-self: center;
+    display: table;
+}
+
+#special-effects p {
+    font-size: 36px;
+    font-family: serif;
+    color: gold;
+    text-shadow: 2px 1px black;
+    display: table-cell; 
+    vertical-align: middle; 
+    text-align: center; 
+}
+
+/*post it*/
+.post-it {
+  max-width: 400px;
+  height: 200px;
+  background: #f7e99a;
+  display: table;
+}
+
+.left, .right {
+  padding: 5px;
+  display: table-cell;
+}
+.left { 
+  vertical-align: middle;
+  background: pink;
+}
+.right {
+  width: 100%;
+}
+
+.Aligner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Aligner-item--top {
+    align-self: flex-start;
+}
+
+#airplane {
+    background-image: url(Pictures/viggen.png);
+    background-repeat: no-repeat;
+    height: 105px;
+    width: 312px;
+    z-index: 1;
+    position: absolute;
+}

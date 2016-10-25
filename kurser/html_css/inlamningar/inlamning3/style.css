@@ -1,0 +1,237 @@
+* {
+  box-sizing: border-box;
+}
+
+
+body { font-size: 10pt; color: #383838; background: #ffffcc; background-image: url(images/o-SCOTLAND-facebook1.jpg);
+    background-repeat: no-repeat; 
+    background-attachment: fixed;
+	background-size:cover;
+}
+
+header {}
+nav { padding: none;
+    margin: none;   
+}
+ ul { padding: 0;
+    margin: 0;   
+}
+
+nav {background: rgba(193, 193, 193, 0.19)}
+
+.nav-container {
+    color: black;
+    font-family: sans-serif;
+}
+
+.social-container {
+    color: black;
+    font-family: sans-serif;
+    background: rgba(193, 193, 193, 0.19);
+}
+
+/* Colors */
+
+
+li:hover {
+    background: rgba(193, 193, 193, 0.67);
+}
+li li {
+    background: rgba(193, 193, 193, 0.19);
+}
+li li:hover {
+    background: rgba(193, 193, 193, 0.67);
+}
+li li li{
+    background: rgba(193, 193, 193, 0.19);
+}
+li li li:hover {
+    background: rgba(193, 193, 193, 0.67);
+}
+
+
+.flex-nav {
+    padding: 0;
+    display: flex;
+    list-style-type: none;
+}
+
+.flex-nav > li:not(:first-child) {
+    border-left: 2px solid rgba(0, 0, 0, 0.12);
+}
+
+.flex-nav li {
+    flex: 1;
+    text-align: center;
+    color: inherit;
+    transition: all .2s ease;
+}
+
+.flex-nav li:hover {
+    flex: 1.1;
+}
+
+.flex-nav li a {
+    display: block;
+    padding: 8px 0;
+    color: inherit;
+    text-decoration: none;
+}
+
+.drop-down li {
+    position: relative;
+}
+
+.drop-down li ul {
+    display: none;
+    width 100%;
+    position: absolute;
+    list-style-type: none;
+}
+
+.drop-down li ul ul {
+    left: 100%;
+    top: 0;
+}
+
+.drop-down li ul ul li {
+    width: 92.5%;
+}
+
+.drop-down li ul ul li li {
+    width: 100%;
+}
+
+.drop-down li:hover > ul {
+    display: block;
+}
+
+.icon-image {
+    height:32px;
+}
+
+
+p {
+    font-family: sans-serif;
+    font-size: 1.3em;
+
+}
+
+h1 { font-size: 3em;
+    font-family: sans-serif;
+    text-align: center;
+    color:palegoldenrod;
+}
+
+
+.module-card-wrap {
+  max-width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+}
+
+.module-card {
+  background: rgba(46, 139, 87, 0.67);
+  min-width: 100%;
+  padding: 15px;
+    
+
+margin: 1% 1% 1% 1%;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.module-card-title {
+    font-family: sans-serif;
+  font-size: 120%; 
+  font-weight: 700;
+}
+
+.module-card-meta {
+  display: flex;
+}
+
+.module-card-category, .module-card-author {
+    font-family: sans-serif;
+  flex: 1;
+}
+
+.module-card-author {
+  text-align: right;
+}
+
+.module-card-bottom {
+  display: flex;
+  flex-direction: column;
+}
+
+.module-card-img {
+  margin: 20px 0;
+  align-self: center;
+  width: 100%;
+  height: auto;
+}
+
+.module-card-button {
+  background: gold;
+    font-size: 110%;
+    font-weight: 600;
+  color: rgba(147, 143, 143, 0.99);
+  border: none;
+  margin-top: auto;
+  padding: 10px;
+}
+
+p {
+    font-family: sans-serif;
+    font-size: 1.3em;
+}
+
+
+@media all and (min-width: 800px) {
+  .module-card {
+      width: 48%;
+    margin: 5 0 auto 3%;
+    min-width: 0;
+  }
+    nav {
+         display: flex;
+         flex-direction: row;
+         justify-content:space-between;}
+    nav ul {width: 400px;
+        }
+    .icon-image {
+        height: 20px;
+    }
+}
+
+@media all and (min-width: 401px) and (max-width: 799px) {
+    nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    }
+    .icon-image {
+        height: 25px;
+    }
+    nav ul li{width: 7px;
+    height: auto;}
+  
+    
+}
+
+@media all and (max-width: 400px) {
+    nav {
+    display: flex;
+    flex-direction: column;
+    }
+    nav ul { display: flex;
+             flex-direction: column;}
+    .icon-image {
+        height: 20px;
+    }
+}
+
+
