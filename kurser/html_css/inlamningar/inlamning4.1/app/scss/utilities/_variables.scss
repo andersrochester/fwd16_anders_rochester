@@ -1,0 +1,20 @@
+$main-background: #ffffcc; 
+$nav-background: rgba(193, 193, 193, 0.19);
+$nav-background-hover: rgba(193, 193, 193, 0.25)
+$card-background: rgba(46, 139, 87, 0.67);
+$button-background: gold;
+
+$background: (
+    'maincolor': ffffcc,
+    'nav-bar': rgba(193, 193, 193, 0.19),
+    'card' : rgba(46, 139, 87, 0.67),
+    'button-on' : gold;
+)
+
+
+$breakpoints: (
+  'small':  ( min-width:  30.000em ),
+  'medium': ( min-width:  48.000em ),
+  'large':  ( min-width: 62.000em ),
+  'wide':  ( min-width: 75.000em )
+) !default;

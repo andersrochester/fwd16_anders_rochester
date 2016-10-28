@@ -3,50 +3,40 @@
 <head>
     <title>Anders Rochester</title>
     <link href='https://fonts.googleapis.com/css?family=Raleway:400, 600' rel='stylesheet' type='text/css'>
-    <link rel='stylesheet' href='css/style.css'/>
-    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='css/styles.css'/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
 
 
 <body>
 
-<nav>
+  <nav>
     <div class="nav-container">
-        <ul class="flex-nav drop-down">
+      
+        <label for="menu-toggle"><i class="fa fa-bars fa-2x"></i></label>
+        <input type="checkbox" id="menu-toggle"/>
+        <ul id="menu" class="flex-nav drop-down" >
+
             <li><a href="#">One</a>
-      <ul>
-        <li><a href="#">One drop down <i class="fa fa-caret-right" aria-hidden="true"></i>
-</a>
-          <ul>
-            <li><a href="#">First A A <i class="fa fa-caret-right" aria-hidden="true"></i>
- </a>
-              <ul>
-                <li><a href="#">First A A A</a></li>
-                <li><a href="#">First A A B</a></li>
-              </ul></li>
-            <li><a href="#">First A B</a>
-              <ul>
-                <li><a href="#">First A B A</a></li>
-              </ul></li>
-            <li><a href="#">First A C</a></li>
-          </ul></li>
-        <li><a href="#">First B</a></li>
-        <li><a href="#">First C</a></li>
-      </ul>
-    </li>
-            <li><a href="#">Two</a>
-      <ul>
-        <li><a href="#">Second A</a></li>
-        <li><a href="#">Second B</a></li>
-      </ul>
-    </li>
+               <ul>
+                 <li><a href="#">One down <i class="fa fa-caret-right" aria-hidden="true"></i></a>
+                  <ul>
+                    <li><a href="#">One.1 <i class="fa fa-caret-right" aria-hidden="true"></i></a>
+                       <ul>
+                         <li><a href="#">one.1.1</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li><a href="#">Two</a></li>
             <li><a href="#">Three</a></li>
             <li><a href="#">Four</a></li>
             <li><a href="#">Five</a></li>
             <li><a href="#">Six</a></li>
         </ul>
     </div>
-
     <div class="social-container">
         <ul class="flex-nav">
             <li><a href=""><i class="fa fa-twitter fa-2x"></i></a></li>
@@ -56,12 +46,13 @@
         </ul>
     </div>
 
-</nav>
+  </nav>
 
 
 <div class="module-card-wrap">
-  <div class="module-card">
-    <div class="module-card-title">Single Malt</div>
+
+<div class="module-card">
+    <div class="module-card-title">Jag joppas</div>
     <div class="module-card-meta">
       <div class="module-card-category">
         <span class="fa fa-tag"></span>
@@ -80,11 +71,12 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea ipsum sit perspiciatis iusto commodi nihil tenetur veritatis adipisci sed? Illo nobis similique in facilis libero ab officia ratione nesciunt fugiat.</p>
       </div>
 
-      <button class="module-card-button">See More</button>
     </div>
+      <button class="module-card-button">See More</button>
+    
   </div>
 
-  <div class="module-card">
+<div class="module-card">
     <div class="module-card-title">Single Malt</div>
     <div class="module-card-meta">
       <div class="module-card-category">
@@ -102,12 +94,12 @@
         <div>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea ipsum sit perspiciatis iusto commodi nihil tenetur veritatis adipisci sed? Illo nobis similique in facilis libero ab officia ratione nesciunt fugiat.</p>
         </div>
-      
     </div>
     <button class="module-card-button">See More</button>
   </div>
 
-  <div class="module-card">
+<div class="module-card">
+
     <div class="module-card-title">Single Malt</div>
     <div class="module-card-meta">
       <div class="module-card-category">
@@ -178,6 +170,33 @@
       <button class="module-card-button">See More</button>
     </div>
   </div>
+  <div class="module-card">
+    <div class="module-card-title">Single Malt</div>
+    <div class="module-card-meta">
+      <div class="module-card-category">
+            <span class="fa fa-tag"></span>
+            <span>Desserts</span>
+      </div>
+      <div class="module-card-author">
+
+        <span class="fa fa-user"></span>         
+        <span>Anders Rochester</span>
+      </div>
+    </div>
+
+    <div class="module-card-bottom">
+      <img src="/images/photo-whisky_med_hr.jpeg" alt="Single Malt" class="module-card-img" />
+
+      <div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea ipsum sit perspiciatis iusto commodi nihil tenetur veritatis adipisci sed? Illo nobis similique in facilis libero ab officia ratione nesciunt fugiat.</p>
+      </div>
+
+      <button class="module-card-button">See More</button>
+    </div>
+  </div>
+
+
+
 </div>
 
 </body>
