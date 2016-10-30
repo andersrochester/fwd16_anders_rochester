@@ -1,0 +1,55 @@
+// Modern border-box applied everywhere.
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body{
+  color: map-get($color, bright);
+  background: map-get($color, dark);
+  background-image: url(/images/o-SCOTLAND-facebook1.jpg);
+  background-repeat: no-repeat; 
+  background-attachment: fixed;
+  background-size:cover;
+}
+
+a {
+    text-decoration: none;
+}
+
+p { font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
+
+
+h2 {
+    font-family: sans-serif;
+    font-size: 110%; 
+    font-weight: 600;
+    margin: 0;
+}
+
+h3 {
+    font-size: 90%;
+    padding: 12px;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 25%;
+  height: 100vh;
+}
+
+#welcome {
+    font-family: serif;
+    min-height: 100%;
+    min-width: 100%;
+}
+
+
+

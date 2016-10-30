@@ -1,0 +1,66 @@
+/* flex cards */
+
+.module-card-wrap {
+  max-width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  @media screen and (min-width: 416px) {
+    flex-direction: row;
+  }
+}
+
+.module-card {
+  background: map-get($color, dark);
+  min-width: 100%;
+  padding: 15px;
+  display: flex;
+  margin: 1% 1% 1% 1%;
+  flex-direction: column;
+  flex-grow: 1;
+  @media screen and (min-width: 416px) {
+    background:map-get($color,darkgrey);
+    width: 48%;
+    margin: 5 0 auto 3%;
+    min-width: 0;
+  }
+}
+
+.module-card-title {
+ display: flex;
+}
+
+.module-card-meta {
+  display: flex;
+}
+
+.module-card-category, .module-card-author {
+    font-family: sans-serif;
+  flex: 1;
+}
+
+.module-card-author {
+  text-align: right;
+}
+
+.module-card-bottom {
+  display: flex;
+  flex-direction: column;
+}
+
+.module-card-img {
+  margin: 20px 0;
+  align-self: center;
+  width: 100%;
+  height: auto;
+}
+
+.module-card-button {
+  background: map-get($color, golden);
+    font-size: 110%;
+    font-weight: 600;
+  color: rgba(147, 143, 143, 0.99);
+  border: none;
+  margin-top: auto;
+  padding: 10px;
+}

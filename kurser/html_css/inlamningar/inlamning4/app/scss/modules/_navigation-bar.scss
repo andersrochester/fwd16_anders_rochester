@@ -1,0 +1,122 @@
+/* navigation bar */
+nav {
+    display: flex;
+    flex-direction: column;
+    @media screen and (min-width: 416px){
+       flex-direction: row;
+       align-items: stretch;
+       justify-content: space-between;
+    }
+}
+
+nav ul { 
+    display: flex;
+    flex-direction: column;
+      @media screen and (min-width: 416px){
+          flex-grow: 1;
+          height: auto;
+      }
+}
+            
+.drop-down {
+    display: flex;
+    flex-grow: 1;
+} 
+ 
+.drop-down li ul {
+    display: none;
+    position: absolute;
+    list-style-type: none;
+    width: 100%;
+}
+
+ .drop-down ul { width: 50px;}
+ 
+ .drop-down ul ul{
+    display: none;
+    position: absolute;
+    list-style-type: none;
+    z-index: 200;
+    left: 50px;
+    padding: 15px;
+}
+
+.drop-down ul ul ul{
+    position: absolute;
+    left: 6px;
+    z-index: 300;
+    padding: 15px;
+}
+
+.drop-down ul ul ul ul{
+    position: absolute;
+}
+    .drop-down li {
+    padding: 10px;
+    text-align: left;
+    }
+.drop-down li:hover > ul {
+    display: block;
+    z-index: 200;
+}
+
+%container {
+    display: flex;
+    background: rgba(193, 193, 193, 0.19);
+    flex-grow: 1;
+}
+
+.nav-container {
+    @extend %container;
+}
+
+.social-container {
+    @extend %container;
+    @media screen and (max-width: 416px) {
+        display: none;
+    }
+}
+
+.flex-nav {
+    padding: 0;
+    display: flex;
+    list-style-type: none;
+    @media screen and (min-width: 416px) {
+        flex-direction: row;
+    }
+}
+
+.flex-nav > li:not(:first-child) {
+    border-left: 2px solid rgba(0, 0, 0, 0.12);
+}
+
+.flex-nav li {
+    flex: 1;
+    text-align: center;
+    color: inherit;
+    transition: all .2s ease;
+}
+
+.flex-nav li a {
+    display: block;
+    padding: 8px 0;
+}
+
+/* Colors */
+
+
+li:hover {
+    background: rgba(193, 193, 193, 0.67);
+}
+li li {
+    background: rgba(193, 193, 193, 0.19);
+}
+li li:hover {
+    background: rgba(193, 193, 193, 0.67);
+}
+li li li{
+    background: rgba(193, 193, 193, 0.19);
+}
+li li li:hover {
+    background: rgba(193, 193, 193, 0.67);
+}
