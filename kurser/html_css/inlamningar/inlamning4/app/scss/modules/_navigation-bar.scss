@@ -51,13 +51,14 @@ nav ul {
 .drop-down ul ul ul ul{
     position: absolute;
 }
-    .drop-down li {
-    padding: 10px;
-    text-align: left;
-    }
-.drop-down li:hover > ul {
+
+.drop-down li {
+  padding: 10px;
+  text-align: left;
+  & > ul {
     display: block;
     z-index: 200;
+  }
 }
 
 %container {
@@ -95,11 +96,8 @@ nav ul {
     text-align: center;
     color: inherit;
     transition: all .2s ease;
-}
-
-.flex-nav li a {
-    display: block;
-    padding: 8px 0;
+  a {display : block;
+     padding: 8px 0;}
 }
 
 /* Colors */
@@ -108,15 +106,16 @@ nav ul {
 li:hover {
     background: rgba(193, 193, 193, 0.67);
 }
-li li {
+  li li {
     background: rgba(193, 193, 193, 0.19);
-}
-li li:hover {
-    background: rgba(193, 193, 193, 0.67);
-}
-li li li{
+    &:hover {
+      background: rgba(193, 193, 193, 0.67);
+    }
+  }
+  
+  li li li {
     background: rgba(193, 193, 193, 0.19);
-}
-li li li:hover {
-    background: rgba(193, 193, 193, 0.67);
-}
+    &:hover {
+      background: rgba(193, 193, 193, 0.67);
+    }
+  }

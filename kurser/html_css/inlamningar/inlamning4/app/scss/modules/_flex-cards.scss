@@ -1,3 +1,6 @@
+@import 'my-mixins';
+
+
 /* flex cards */
 
 .module-card-wrap {
@@ -28,6 +31,10 @@
 
 .module-card-title {
  display: flex;
+ @include bolder-text(28px, gold);
+  @media screen and (max-width: 415px) {
+    @include bolder-text(22px, gold);
+  }
 }
 
 .module-card-meta {
