@@ -1,90 +1,58 @@
 /* navigation bar */
-nav {
-    display: flex;
-    flex-direction: column;
-    @media screen and (min-width: 416px){
-       flex-direction: row;
-       align-items: stretch;
-       justify-content: space-between;
-    }
+
+#nav-container label {
+ position: relative;
+ display: block;
+ min-height: 2em;
+ padding: .55em;
+ font-size: 1.1em;
+ margin: 0;
+ cursor: pointer;
+ line-height: 2em;
 }
 
-nav ul { 
-    display: flex;
-    flex-direction: column;
-      @media screen and (min-width: 416px){
-          flex-grow: 1;
-          height: auto;
-      }
-}
-            
-.drop-down {
-    display: flex;
-    flex-grow: 1;
-} 
- 
-.drop-down li ul {
-    display: none;
-    position: absolute;
-    list-style-type: none;
-    width: 100%;
+#nav-container label:after {
+ position: absolute;
+ right: 1em;
+ top: 0.2em;
+ font-size: 50px;
+ content: "\2261";
 }
 
- .drop-down ul { width: 50px;}
- 
- .drop-down ul ul{
-    display: none;
-    position: absolute;
-    list-style-type: none;
-    z-index: 200;
-    left: 50px;
-    padding: 15px;
+/* dölj checkboxen*/
+#nav-container input.trigger {
+ position: absolute;
+ display:none;
 }
 
-.drop-down ul ul ul{
-    position: absolute;
-    left: 6px;
-    z-index: 300;
-    padding: 15px;
+#nav-container input.trigger:checked ~ ul, #nav-container input.trigger:checked ~ ul li ul {
+ display:block !important;
 }
 
-.drop-down ul ul ul ul{
-    position: absolute;
+/* dölj mobilmenyn om inte checkboxen är iklickad*/
+#nav-container ul {
+ display: none;
+ width: 100%;
+ list-style: none;
+ margin: 0px;
+ position: relative;
 }
 
-.drop-down li {
-  padding: 10px;
-  text-align: left;
-  & > ul {
-    display: block;
-    z-index: 200;
-  }
+#nav-container ul li a {
+  display: block;
+  padding: 1em;
+  text-decoration: none;
 }
 
-%container {
-    display: flex;
-    background: rgba(193, 193, 193, 0.19);
-    flex-grow: 1;
+#nav-container, .social-container {
+    font-family: sans-serif;
+    color: #232333;
 }
 
-.nav-container {
-    @extend %container;
-}
-
-.social-container {
-    @extend %container;
-    @media screen and (max-width: 416px) {
-        display: none;
-    }
-}
-
-.flex-nav {
+.flex-nav, .drop-down{
     padding: 0;
     display: flex;
     list-style-type: none;
-    @media screen and (min-width: 416px) {
-        flex-direction: row;
-    }
 }
 
 .flex-nav > li:not(:first-child) {
@@ -94,14 +62,45 @@ nav ul {
 .flex-nav li {
     flex: 1;
     text-align: center;
-    color: inherit;
     transition: all .2s ease;
-  a {display : block;
-     padding: 8px 0;}
+}
+
+.flex-nav li a {
+    display: block;
+    padding: 8px 0;
+    color: inherit;
+    text-decoration: none;
+}
+
+.drop-down li {
+  position: relative;
+  flex: 1;
+  text-align: center;
+  transition: all .2s ease;
+  ul {
+    display: none;
+    width: 100%;
+    position: absolute;
+  }
+}
+
+.drop-down li ul ul {
+  left: 100%;
+  top: 0;
+  li {
+    width: 92.5%;
+  }
+}
+
+.drop-down li:hover > ul {
+    display: block;
+}
+
+.icon-image {
+    height:32px;
 }
 
 /* Colors */
-
 
 li:hover {
     background: rgba(193, 193, 193, 0.67);
