@@ -1,0 +1,44 @@
+// Font icons
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
+
+$text: (
+  body: unquote("'Merriweather', serif"),
+  body-weight: 400,
+  headline: unquote("'Oswald', 'Helvetica Neue', Arial, sans-serif"),
+  headline-weight: 400,
+) !default;
+
+
+// COLORS
+$color: (
+  main: #c7c7c7,
+  blodred: #73270e,
+  accent1: #9b7467,
+  dark: #9b7467,
+  greyish: #e1e1e1,
+  darkergrey: #9b7467,
+  darkgrey: #666,
+  bright: #f7f7f7,
+  golden: #d4b404,
+) !default;
+
+
+// vet ej om jag skall använda dessa 
+$color-defs: (
+  header: map-get($color, bright),
+  header-text: map-get($color, dark),
+  footer: map-get($color, dark),
+  footer-text: map-get($color, bright),
+  text: map-get($color, dark),
+  button-default: map-get($color, main),
+  button-default-text: map-get($color, bright),
+) !default;
+
+//
+
+$breakpoints: (
+  'phone': (min-width: 415px),
+  'tablet': (min-width: 768px),
+  'screen': (min-width: 1024px),
+  'wide-screen': (min-width: 1508px)
+) !default;
