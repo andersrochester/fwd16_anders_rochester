@@ -1,120 +1,152 @@
 /* navigation bar */
 
-#nav-container label {
- position: relative;
- display: block;
- min-height: 2em;
- padding: .55em;
- font-size: 1.1em;
- margin: 0;
- cursor: pointer;
- line-height: 2em;
-}
 
-#nav-container label:after {
- position: absolute;
- right: 1em;
- top: 0.2em;
- font-size: 50px;
- content: "\2261";
-}
-
-/* dölj checkboxen*/
-#nav-container input.trigger {
- position: absolute;
- display:none;
-}
-
-#nav-container input.trigger:checked ~ ul, #nav-container input.trigger:checked ~ ul li ul {
- display:block !important;
-}
-
-/* dölj mobilmenyn om inte checkboxen är iklickad*/
-#nav-container ul {
- display: none;
- width: 100%;
- list-style: none;
- margin: 0px;
- position: relative;
-}
-
-#nav-container ul li a {
-  display: block;
-  padding: 1em;
-  text-decoration: none;
-}
-
-#nav-container, .social-container {
+.social-container {
     font-family: sans-serif;
     color: #232333;
 }
 
-.flex-nav, .drop-down{
-    padding: 0;
-    display: flex;
-    list-style-type: none;
+
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.flex-nav > li:not(:first-child) {
-    border-left: 2px solid rgba(0, 0, 0, 0.12);
-}
-
-.flex-nav li {
-    flex: 1;
-    text-align: center;
-    transition: all .2s ease;
-}
-
-.flex-nav li a {
-    display: block;
-    padding: 8px 0;
-    color: inherit;
-    text-decoration: none;
-}
-
-.drop-down li {
-  position: relative;
-  flex: 1;
-  text-align: center;
-  transition: all .2s ease;
-  ul {
-    display: none;
-    width: 100%;
-    position: absolute;
-  }
-}
-
-.drop-down li ul ul {
-  left: 100%;
-  top: 0;
-  li {
-    width: 92.5%;
-  }
-}
-
-.drop-down li:hover > ul {
-    display: block;
-}
-
-.icon-image {
-    height:32px;
+.wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  font-family: sans-serif;
+  color: black;
+  background: rgba(52, 73, 94, 0.14);
 }
 
 /* Colors */
 
 li:hover {
-    background: rgba(193, 193, 193, 0.67);
+  background: rgba(41, 128, 185, 0.22);
 }
-  li li {
-    background: rgba(193, 193, 193, 0.19);
-    &:hover {
-      background: rgba(193, 193, 193, 0.67);
-    }
-  }
-  
-  li li li {
-    background: rgba(193, 193, 193, 0.19);
-    &:hover {
-      background: rgba(193, 193, 193, 0.67);
-    }
-  }
+li li {
+  background: rgba(46, 204, 113, 0.39);
+}
+li li:hover {
+  background: rgba(39, 174, 96, 0.22);
+}
+li li li {
+  background: rgba(231, 76, 60, 0.22);
+}
+li li li:hover {
+  background: rgba(192, 57, 43, 0.22);
+}
+li li li li {
+  background: rgba(155, 89, 182, 0.22);
+}
+li li li li:hover {
+  background: rgba(142, 68, 173, 0.22);
+}
+
+/* Flex Navigation Bar */
+.flex-nav {
+  padding: 0;
+  display: flex;
+  flex-flow: column;
+  list-style-type: none;
+}
+
+.flex-nav li {
+  flex: 1;
+  text-align: center;
+  color: inherit;
+  transition: all .2s ease;
+}
+.flex-nav li:hover {
+  flex: 1.1;
+}
+.flex-nav li a {
+  display: block;
+  padding: 20px 0;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Drop Down */
+.drop-down li {
+  position: relative;
+}
+
+/*vid flex-flow row, position absolute,
+  flex-flow column, position relative
+*/
+.drop-down li ul {
+  display: none;
+  width: 100%;
+  position: relative;
+  list-style-type: none;
+}
+.drop-down li ul ul {
+    /*när flex-nav har flex-flow: row skall left sättas till 100%
+    när flex-nav har flex-flow: column skall left sättas till 0%  och "drop-down li ul"" skall ha position: relative*/
+    
+  left: 0%;
+  top: 0;
+}
+.drop-down li ul ul li {
+  width: 100%;
+  z-index: 100;
+}
+.drop-down li ul ul li li {
+  width: 100%;
+  z-index: 200;
+}
+.drop-down li:hover > ul {
+  display: block;
+}
+
+
+/* dölja menyn */
+
+
+.wrapper input.trigger {
+    position: absolute;
+    display: none;
+}
+
+
+.wrapper label {
+    position:relative;
+    display: block;
+    min-height: 2em;
+    padding: .45em;
+    font-size: 1.1em;
+    margin: 0;
+    cursor: pointer;
+    background: gold;
+    
+}
+
+.wrapper label:after {
+    position:absolute;
+    right: 1em;
+    top: 0;
+    content: "\2261";
+    color: white;
+    font-size: 2em;
+}
+
+
+.wrapper input.trigger:checked ~ ul{
+    display: block !important;
+}
+
+.wrapper ul {
+    display: none;
+}
+
+@media screen and (min-width: 416px) {
+
+    .wrapper label {display: none;}
+    .flex-nav {flex-flow: row;}
+    .drop-down li ul ul {left: 100%;}
+    .wrapper ul{ display: flex;}
+    .social-container {flex:1}
+
+}
