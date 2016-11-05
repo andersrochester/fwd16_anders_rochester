@@ -1,11 +1,10 @@
 /* mixin title-text */
 @mixin bolder-text($size: 25px, $color: #454545) {
-  font: {family: Arial, Helvetica, sans-serif;
+  font: {family: 'Raleway', Arial, Helvetica, sans-serif;
         size: $size;
         weight: 800;
         }
   color: $color;
-  padding: $size / 6;
 }
 
 /* mixin breakpoint */
@@ -31,3 +30,5 @@
 /* mixin shiver */
 
 /* flex width */
+
+/* card background*/

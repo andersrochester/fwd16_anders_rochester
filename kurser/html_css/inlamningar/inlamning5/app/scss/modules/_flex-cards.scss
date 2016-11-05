@@ -1,32 +1,83 @@
 /* flex cards */
 
 .card-wrap {
-  max-width: 88%;
-  margin: auto;
+  max-width: 75%;
   display: flex;
   flex-wrap: wrap;
-  background: map-get($color, bright);
+  margin: auto;
+  margin-bottom: 100px;
+  @media screen and (min-width: 416px) {
+    flex-direction: row;
+  }
 }
 
 .card-main {
- /* background: map-get($color, greyish);*/
- background: blue;
+  background: rgba(199, 199, 199, .55);
   min-width: 100%;
-  margin: 1% 1% 1% 1%;
+  padding: 1px;
+  margin-bottom: 3%;
+  // flex
   display: flex;
-  flex-direction: column;
+  flex-flow: column;
   flex-grow: 1;
+  align-content: center;
+  @media screen and (min-width: 416px) {
+    width: 48%;
+    margin: 5 0 auto 3%;
+    min-width: 0;
+  }
 }
 
-.card-head {
-  font-size: 300%;
-  font-family: 'Times New Roman', Times, serif;
-  font-weight: 700%;
-  @include bolder-text (40px, black);
+.card-title {
+ @include bolder-text(28px, gold);
+  @media screen and (max-width: 415px) {
+    @include bolder-text(22px, gold);
+  }
+  @extend %card-text-padding;
+}
+
+.card-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .card-image {
-  padding: 1% 1% 1% 1%;
+  margin: 0;
   align-self: center;
-  width: 30%
+  width: 100%;
+  height: auto;
+}
+
+.card-button {
+  background: rgba(225, 225, 225, 0.35);
+    font-size: 140%;
+    font-weight: 600;
+    font-family: "Raleway", 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #73270e;
+  width: 100%;
+  margin: 0;
+  padding: 3%;
+  text-align: center;
+  text-justify: center;
+  border: none;
+}
+.card-background {
+  background-image: url(/images/satyr-black.png);
+  background-repeat: no-repeat; 
+  background-attachment: fixed;
+  background-size:cover;
+}
+
+.card-text {
+  font-family: "Raleway", 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: black;
+  font-size: 120%;
+  @extend %card-text-padding;
+}
+
+/* effekter */
+
+.card-button:hover {
+  background: rgba(225, 225, 225, 0.65);
 }
