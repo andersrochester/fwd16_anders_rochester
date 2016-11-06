@@ -19,7 +19,7 @@ html, header, footer, body, nav, div, img, a,ul, li, h1, h2{
 body{
   color: map-get($color, bright);
   background: map-get($color, dark);
-  /*background-image: url(/images/main-picture.png);*/
+  background-image: url(/images/main-picture.png);
   background-repeat: no-repeat; 
   background-attachment: fixed;
   background-size:cover;

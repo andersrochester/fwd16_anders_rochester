@@ -1,1 +1,111 @@
-/* navigation bar */
+
+
+#flex-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;  
+}
+
+
+/*mobil menyn*/
+#nav {background: rgba(193, 193, 193, 0.12);
+  display: flex;
+}
+.logo {
+    margin: 0;
+    display: inline-block;
+    position: absolute;
+    max-height: 50px;
+}
+
+/* hämta text från en mixin   DRY */
+
+.logo-text {
+    position: absolute;
+  margin-left: 70px;  
+  font-family: "Raleway", 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: black;
+  font-size: 120%;
+  @extend %card-text-padding;
+}
+
+#nav label {
+  min-height: 2.3em;
+  font-size: 1.4em;
+  margin: 0;
+  cursor: pointer;
+  line-height: 2em;
+  color: black;
+}
+
+/* sätt till hamburgare ikonet och koppla med position absolute mot #nav label */
+#nav label:after {
+  position: absolute;
+  right: 0.2em;
+  font-size: 1.7em;
+  content: "\2261";
+}
+
+
+/* dölj checkboxen*/
+#nav input.trigger {
+  position: absolute;
+  display: none;
+}
+
+/* när checkbox är checkad visa allt för mobilmenyn*/
+#nav input.trigger:checked ~ .menu-card {
+  display: block !important;
+}
+
+/* dölj menu-card */
+#nav .menu-card {
+  display: none;
+}
+.menu-card {
+    position: absolute;
+  margin: 12% 6% 4% 10%;
+  display: flex;
+  width: 80%;
+  height: auto;
+  background: rgba(193, 193, 193, 0.12);
+  padding-top: 0;
+}
+.button {
+  border: none;
+  color: white;
+  width: 100%;
+  margin: 0% 1% 1% 0%;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+.button-green {
+  background: #4CA950;
+  color: white;
+}
+.button-green a:hover {
+  background: #40A945;
+  color: white;
+}
+.button-grey {
+  background: #757575;
+  color: black;
+}
+.button-red {
+  background: red;
+  color: #acb;
+}
+
+/* dölj mobilmenyn om inte checkboxen är iklickad*/
+
+/*
+@include respond-to (small){
+ #nav label {
+   display:none;
+ }
+}
+*/
