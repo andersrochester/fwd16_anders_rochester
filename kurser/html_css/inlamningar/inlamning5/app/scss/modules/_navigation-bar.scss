@@ -10,7 +10,9 @@
 
 /*mobil menyn*/
 #nav {background: rgba(193, 193, 193, 0.12);
+border: 1px solid red;
   display: flex;
+  align-items: center;
 }
 .logo {
     margin: 0;
@@ -22,12 +24,13 @@
 /* hämta text från en mixin   DRY */
 
 .logo-text {
-    position: absolute;
+  position: absolute;
+  display: inline-block;
   margin-left: 70px;  
   font-family: "Raleway", 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   color: black;
   font-size: 120%;
-  @extend %card-text-padding;
+  padding: 2% 2% 2% 2%;
 }
 
 #nav label {
@@ -42,7 +45,7 @@
 /* sätt till hamburgare ikonet och koppla med position absolute mot #nav label */
 #nav label:after {
   position: absolute;
-  right: 0.2em;
+  right: 4%;
   font-size: 1.7em;
   content: "\2261";
 }
@@ -64,7 +67,7 @@
   display: none;
 }
 .menu-card {
-    position: absolute;
+  position: absolute;
   margin: 12% 6% 4% 10%;
   display: flex;
   width: 80%;

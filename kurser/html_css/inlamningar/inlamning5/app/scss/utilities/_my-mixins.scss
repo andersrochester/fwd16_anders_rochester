@@ -25,6 +25,30 @@
  }
 }
 
+
+
+/* count nth  child */
+
+@mixin toggle-width {
+
+@for $i from 1 through 10 {
+  @if $i == 5 {
+  .card-main:nth-child(#{$i}) {
+    width: #{98%}} 
+    }
+  @else if $i == 10 {
+  .card-main:nth-child(#{$i}) {
+    width: #{98%}}
+  }
+  @else {
+  .card-main:nth-child(#{$i}) {
+    width: #{48%}
+  }
+}
+}
+}
+
+
 /* mixin toggle picture */
 
 /* mixin shiver */

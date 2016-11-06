@@ -8,6 +8,7 @@
   margin-bottom: 100px;
   @media screen and (min-width: 416px) {
     flex-direction: row;
+    @include toggle-width;
   }
 }
 
@@ -21,12 +22,12 @@
   flex-flow: column;
   flex-grow: 1;
   align-content: center;
-  @media screen and (min-width: 416px) {
-    width: 48%;
+   @media screen and (min-width: 416px) {
     margin: 5 0 auto 3%;
     min-width: 0;
-  }
+   }
 }
+
 
 .card-title {
  @include bolder-text(28px, gold);
