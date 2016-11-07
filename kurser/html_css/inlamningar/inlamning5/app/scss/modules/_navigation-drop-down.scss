@@ -1,47 +1,42 @@
 /* navigation bar */
 
-
-.social-container {
-    font-family: sans-serif;
-    color: #232333;
-}
-
-
 * {
   margin: 0;
   padding: 0;
 }
 
 .wrapper {
-  max-width: 80%;
+border: 1px solid black;
+  max-width: 960px;
   margin: 0 auto;
   font-family: sans-serif;
   color: black;
   background: rgba(52, 73, 94, 0.14);
 }
 
+
 /* Colors */
 
 li:hover {
-  background: rgba(155, 170, 182, 0.3);
+  background: rgba(41, 128, 185, 0.22);
 }
 li li {
-  background: rgba(155, 170, 182, 0.22);
+  background: rgba(46, 204, 113, 0.39);
 }
 li li:hover {
-  background: rgba(155, 170, 182, 0.3);
+  background: rgba(39, 174, 96, 0.22);
 }
 li li li {
-  background: rgba(155, 170, 182, 0.22);
+  background: rgba(231, 76, 60, 0.22);
 }
 li li li:hover {
-  background: rgba(155, 170, 182, 0.3);
+  background: rgba(192, 57, 43, 0.22);
 }
 li li li li {
-  background: rgba(155, 170, 182, 0.22);
+  background: rgba(155, 89, 182, 0.22);
 }
 li li li li:hover {
-  background: rgba(155, 170, 182, 0.3);
+  background: rgba(142, 68, 173, 0.22);
 }
 
 /* Flex Navigation Bar */
@@ -75,8 +70,6 @@ li li li li:hover {
 
 /*vid flex-flow row, position absolute,
   flex-flow column, position relative
-  vid brytpunkten för mobiltelefon bör
-  undermenyerna ligga fast (position: absolute;)
 */
 .drop-down li ul {
   display: none;
@@ -84,7 +77,6 @@ li li li li:hover {
   position: relative;
   list-style-type: none;
 }
-
 .drop-down li ul ul {
     /*när flex-nav har flex-flow: row skall left sättas till 100%
     när flex-nav har flex-flow: column skall left sättas till 0%  och "drop-down li ul"" skall ha position: relative*/
@@ -100,52 +92,17 @@ li li li li:hover {
   width: 100%;
   z-index: 200;
 }
-
 .drop-down li:hover > ul {
   display: block;
 }
 
 
-/* dölja menyn */
+/* dölja menyn 
 
-
-.wrapper input.trigger {
-    position: absolute;
-    display: none;
-
-}
-
-
-.wrapper label {
-    position:relative;
-    display: block;
-    min-height: 2em;
-    padding: .25em;
-    font-size: 1.1em;
-    margin: 0;
-    cursor: pointer;
-}
-
-.wrapper label:after {
-    position:absolute;
-    content: "\2261";
-    color: black;
-    font-size: 2em;
-    top: 0;
-    right: .05em;
-}
-
-
-.wrapper input.trigger:checked ~ ul{
-    display: block !important;
-    ul input.trigger-sub ~ ul li {
-      display: block;
-    }
-}
 
 .wrapper ul {
     display: none;
-}
+}*/
 
 @media screen and (min-width: 416px) {
 
@@ -153,23 +110,5 @@ li li li li:hover {
     .flex-nav {flex-flow: row;}
     .drop-down li ul ul {left: 100%;}
     .wrapper ul{ display: flex;}
-    .social-container {flex:1}
-    .drop-down li ul {position: absolute;}
-}
 
-.logo {
-    margin: 0;
-    display: flex;
-    position: absolute;
-    width: 9%;
-}
-
-/* hämta text från en mixin   DRY */
-
-.logo-text {
-  position: absolute;
-  font-family: "Raleway", 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  color: black;
-  font-size: 120%;
-  padding: 2% 2% 2% 2%;
 }

@@ -1,7 +1,7 @@
 /* flex cards */
 
 .card-wrap {
-  max-width: 75%;
+  max-width: 80%;
   display: flex;
   flex-wrap: wrap;
   margin: auto;
@@ -30,9 +30,9 @@
 
 
 .card-title {
- @include bolder-text(28px, gold);
+ @include bolder-text(28px, black);
   @media screen and (max-width: 415px) {
-    @include bolder-text(22px, gold);
+    @include bolder-text(22px, black);
   }
   @extend %card-text-padding;
 }
@@ -64,7 +64,7 @@
   border: none;
 }
 .card-background {
-  background-image: url(/images/satyr-black.png);
+  background-image: $background-pic-1;
   background-repeat: no-repeat; 
   background-attachment: fixed;
   background-size:cover;

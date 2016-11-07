@@ -23,6 +23,7 @@ $color: (
   darkgrey: #666,
   bright: #f7f7f7,
   golden: #d4b404,
+  background-nav:rgba(225, 225, 225, 0.35),
 ) !default;
 
 
@@ -47,3 +48,4 @@ $breakpoints: (
 ) !default;
 
 $card-width: 48%;
+$background-pic-1: url(/images/satyr_blur.png);

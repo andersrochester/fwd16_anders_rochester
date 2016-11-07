@@ -48,6 +48,17 @@
 }
 }
 
+@mixin card-button($bg) {
+  @extend %button;
+  background: $bg;
+  &:hover {
+    background:darken($bg, 10%);
+    transition: all 0.4s ease;
+  }
+  &:active {
+    background:darken($bg, 25%);
+  }
+}
 
 /* mixin toggle picture */
 

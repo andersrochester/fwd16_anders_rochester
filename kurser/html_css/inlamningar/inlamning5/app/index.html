@@ -10,23 +10,53 @@
 </head>
 
 <body>
+    <img src="images/logo-raven.svg" class="logo">
 
-<div id="flex-page">
 
+<nav class="wrapper">
 
-<!-- simple-menu -->
-<nav role="navigation" id="nav">
-  <img src="images/logo-raven.svg" class="logo">
-      <div class="logo-text">Raven Inc.
-    </div>
   <input class="trigger" type="checkbox" id="mainNavButton">
   <label for="mainNavButton" onclick></label>
-  
-  <div class="menu-card">  
-<button class="button button-green"><a href="#">Home</a></button>
-<button class="button button-grey"><a href="#">About Us</a></button>
-<button class="button button-red"><a href="#">Products</a></button>
-  </div>
+  <ul class="flex-nav drop-down">
+    <li><a href="#">Home</a>
+      <ul>
+        <li><a href="#">Deeper</a>
+          <ul>
+            <li><a href="#">Down</a>  
+              <ul>
+                <li><a href="#">The rabbit hole</a></li>
+                <li><a href="#">Dare</a></li>
+                <li><a href="#">You?</a></li>
+              </ul>
+            </li>
+
+          </ul>
+          
+        </li>
+        <li><a href="#">Owen</a></li>
+      </ul>
+    </li>
+    <li><a href="#">About us</a>
+      <ul>
+        <li><a href="#">Telephone</a>
+          <ul>
+            <li><a href="#">333-444-56</a></li>
+            <li><a href="#">333-555-88</a></li>
+            <li><a href="#">333-666-87</a></li>
+          </ul></li>
+        <li><a href="#">Address</a>
+          <ul>
+            <li><a href="#">Crow Alley</a></li>
+            <li><a href="#">Slippery slope</a></li>
+          </ul></li>
+
+      </ul>
+    </li>
+    <li><a href="#">Gallery</a>
+    <li><a href="#">Log in</a>
+
+  </ul>
+ 
 </nav>
 
 
@@ -162,7 +192,6 @@ We see further and dig deeper than anyone else.</div>
 
 </footer>
 
-</div>
 </body>
 
 </html>
