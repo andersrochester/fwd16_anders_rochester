@@ -173,3 +173,55 @@ li li li li:hover {
   font-size: 120%;
   padding: 2% 2% 2% 2%;
 }
+
+
+/* dropdown med knappar */
+/* skall implementeras men får sluta nu*/
+/*funkar på codepen "Dropdown med knappar"*/
+
+
+/* gömmer sub-menyn (sub1, sub2, sub3) 
+*/
+
+.drop-down ul{display: none;}
+
+/* trigger sub 1 */
+input.trigger-home {
+  position: relative;
+  display: none;}
+
+label.menu-home, label.menu-sub1, label.menu-sub2, label.menu-sub3 {
+  border: 1px solid red;
+  position: relative;
+  display: block;
+  min-height: 1.2em;
+  margin: 0;
+  background: #666;
+  cursor: pointer;
+}
+
+/* trigger sub 1 */
+input.trigger-sub1 {
+  position: relative;
+  }
+
+/* trigger sub 2 */
+
+input.trigger-sub2 {
+  position: absolute;
+  }
+
+/* trigger sub 3 */
+
+input.trigger-sub3 {
+  position: absolute;
+  }
+
+input.trigger-home:checked ~ ul {
+  display: block;
+}
+
+.drop-down input.trigger-sub1:checked ~ ul{
+  display: block;
+}
+
