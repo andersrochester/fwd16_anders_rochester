@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Anders Rochester inlamning 6</title>
+  <!--build:css css/styles.min.css-->
+  <link rel="stylesheet" href="css/styles.css">
+  <!--endbuild-->
+</head>
+
+<body>
+    <img src="images/logo-raven.svg" class="logo">
+
+<!--Vi använder oss av en checkbox för att visa och dölja menyn på mobilen utan javascript-->
+<input type="checkbox" id="nav-toggle">
+<div id="wrapper">
+  <header>
+    <label for="nav-toggle"><i class="fa fa-bars"></i><i class="fa fa-times"></i></label>
+  </header>
+
+  <nav>
+    <ul id="nav-bar">
+
+      <li id="galleri"> 
+       <input class="trigger" type="checkbox" id="gallery-toggle">
+        <a href ="#"><h4>galleri</h4></a>
+        <label for="gallery-toggle" class="menu"></label>
+       
+        <div class="megamenu">
+
+          <!-- card 1 -->
+
+          <div id="menu-card">
+            <div id="menu-card-header">
+              <h4>Djur</h4>
+            </div>
+
+
+            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/786783/ladda%20ned.png" id="menu-card-img" />
+            <div id="card-main">
+
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam pariatur cupiditate ipsa sit </p>
+            </div>
+            <div id="menu-card-footer">
+              <p>AndRoc (at365)</p>
+            </div>
+          </div>
+
+
+          <!-- card 2 -->
+
+          <div id="menu-card">
+            <div id="menu-card-header">
+              <h4>Formulär</h4>
+            </div>
+
+            <div id="menu-card-main">
+
+
+              <a href="#"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/786783/svetlanaK.jpg" id="menu-card-img" /></a>
+
+
+              <div id=form>
+                <label id="label1" for="fname">Förnamn</label>
+                <input type="text" id="fname" name="firstname">
+
+                <label for="lname">Efternamn</label>
+                <input type="text" id="lname" name="lastname">
+
+                <label for="country">Land</label>
+                <select id="country" name="country">
+      <option value="Norge">Norge</option>
+      <option value="Danmnark">Danmark</option>
+      <option value="Sverige">Sverige</option>
+    </select>
+
+                <input type="submit" value="Submit">
+              </div>
+
+            </div>
+
+            <div id="menu-card-footer">
+              <p>AndRoc (at365)</p>
+            </div>
+          </div>
+
+          <!-- card 3 -->
+
+          <div id="menu-card">
+            <div id="menu-card-header">
+              <h4>Stövlar</h4>
+            </div>
+
+            <div id="menu-card-main">
+              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/786783/tamaris.png" id="menu-card-img" />
+
+              <ul id="produkter">
+                <a href="#">
+                  <p>Storlek: 42</p>
+                </a>
+                <a href="#">
+                  <p>Klackhöjd: 10 cm</p>
+                </a>
+                <a href="#">
+                  <p>Färg: brun</p>
+                </a>
+              </ul>
+
+            </div>
+
+            <div id="menu-card-footer">
+              <p>AndRoc (at365)</p>
+            </div>
+          </div>
+
+          <!-- card 4 -->
+
+          <div id="menu-card">
+            <div id="menu-card-header">
+              <h4>Stövletter</h4>
+            </div>
+
+            <div id="menu-card-main">
+
+
+              <a href="#"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/786783/220066.jpg" id="menu-card-img" /></a>
+
+
+              <span><ul id="produkter">
+                <a href="#">
+                  <p>Storlek: 41.5</p>
+                  </a></span>
+                <a href="#">
+                  <p>Klackhöjd: 14 cm</p>
+                </a>
+                <a href="#">
+                  <p>Färg: Karmosin</p>
+                </a>
+              </ul>
+            </div>
+
+            <div id="menu-card-footer">
+              <p>AndRoc (at365)</p>
+            </div>
+          </div>
+
+        </div>
+      </li>
+      <li id="home"><a href ="#"><h4>home</h4></a>
+
+    </ul>
+    
+  </nav>
+</div>
+
+
+
+<div class="card-wrap">
+
+<!-- Card 1  main -->
+
+  <div class="card-main">
+      <img src="images/main-picture.png" alt="Main" class="card-image" />
+  </div>
+
+
+<!-- Card 2  rabbit -->
+
+  <div class="card-main">
+    
+      <img src="images/white-rabbit.svg" alt="Rabbit" class="card-image" />
+  </div>
+
+<!-- Card 3 text -->
+
+  <div class="card-main">
+  <div class="card-text card-background"> As ravens do, we too look everywhere for inspiration and manage to create out of things that others discard.
+We see further and dig deeper than anyone else.</div>
+  
+  </div>
+
+<!-- Card 2 -->
+
+  <div class="card-main">
+  <div class="card-bottom">
+    <div class="card-text card-background"> Viligance and deceitfulness 
+     are our strengths. Here powers are cultivated and 
+     you will find the means and the will too use yours
+    </div>
+    <button class="card-button">IT IS TIME...</button>
+ </div>
+ 
+  </div>
+
+<!-- Card 5  Well -->
+
+  <div class="card-main">
+      <img src="images/well.png" alt="Rabbit" class="card-image" />
+  </div>
+
+<!-- Card 6 text -->
+
+  <div class="card-main card-background">
+    <div class="card-title">From this moment...</div>
+    <div class="card-text">...I will follow 
+      you anywhere as you have followed the tiny rabbit 
+      down the hole. What you see is nothing less then 
+      of what already is in your mind. Sometimes deep 
+     down but most of the time present. Always present.
+    </div>
+  </div>
+
+
+<!-- Card 7 login -->
+
+  <div class="card-main card-background">
+    <div class="card-text">Log in.
+    </div>
+  </div>
+
+
+<!-- Card 8  Gallery -->
+
+  <div class="card-main">
+      <img src="images/well.png" alt="Rabbit" class="card-image" />
+  </div>
+
+<!-- Card 9 text -->
+
+  <div class="card-main card-background">
+    <div class="card-text">This area is only for the chosen 
+      ones. If you are reading this? please leave....
+    </div>
+  </div>
+
+  <!-- Card 10 private -->
+
+  <div class="card-main card-background">
+    <div class="card-text">This area is only for the chosen 
+      ones. If you are reading this? please leave....
+    </div>
+  </div>
+</div>
+
+
+
+<!-- footer three-column fixed -->
+
+
+<footer class="footer-fixed">
+<div class="footer-card-wrap">
+
+<!-- footer column 1 -->
+
+ <div class="footer-card-main">
+    <div class="footer-card-bootom"> 
+      <img src="images/dribbble-ball-mark.png" alt="Rabbit" class="footer-card-image-resize" />
+    </div>
+    <div class="card-text card-text-center"> Some work...</div>
+  </div>
+
+<!-- footer column 2 -->
+
+  <div class="footer-card-main">
+    <div class="footer-card-bootom"> 
+      <img src="images/FB-fLogo.png" alt="Rabbit" class="footer-card-image-resize" />
+    </div>
+    <div class="card-text card-text-center"> Probably not.
+    </div>
+  </div>
+
+<!-- footer colum 3 -->
+
+
+ <div class="footer-card-main">
+    <div class="footer-card-bootom"> 
+      <img src="images/glyph-logo.png" alt="Rabbit" class="footer-card-image-resize" />
+    </div>
+    <div class="card-text card-text-center"> More work...</div>
+  </div>
+
+</div>
+
+
+    <div class="card-text card-text-center"> Copyright © 2016 AndRoc. All Rights Reserved. Web Hosting by (ar365).</div>
+
+</footer>
+
+</body>
+
+</html>

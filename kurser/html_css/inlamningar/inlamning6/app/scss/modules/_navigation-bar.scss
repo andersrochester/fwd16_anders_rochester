@@ -1,0 +1,291 @@
+
+
+
+/* variables in code-pen it has to be first */
+
+$blue-grey: rgba(121, 128, 128, 0.22);
+html {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+h4 {
+  padding: 5px;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: darken($blue-grey, 40);
+  font: {
+    size: 50%;
+    family: verdana;
+  }
+}
+
+p {
+  font: {
+    size: 75%;
+    family: verdana;
+  }
+}
+
+.logo { position: absolute;
+height: 3.5em;
+@media all and (max-width: 416px){
+  height: 4.05em;
+}}
+
+.megamenu {
+  // omsluter kortet
+  position: absolute;
+  margin: 0% 1% 1% 1%; // alternativt position absolute
+  min-width: 315px;
+  padding: 0;
+  display: flex;
+  box-shadow: 3px 5px 10px darken($blue-grey,30);
+  left: 1%;
+}
+
+
+#fotografier {
+  z-index: 200;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  display: flex;
+  flex-grow: 1;
+}
+
+#produkter {
+  color: blue;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  li {
+    text-align: center;
+    a {
+      padding: 0.1em;
+      top: 0;
+      margin: 0;
+      color: black;
+      text-align: right;
+    }
+  }
+}
+
+
+/*flexcard */
+
+#menu-card {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  margin: 1% 1% 1% 1%;
+  width: 25%;
+  background: $blue-grey;
+}
+
+@media screen and (max-width: 416px) {
+  
+  #menu-card:nth-child(2) {
+    width: 33%;
+  }
+  #menu-card:nth-child(1), #menu-card:nth-child(3), #menu-card:nth-child(4) {
+    width: 18%;
+     & a{ color: black;
+        font-size: 110%}
+  }
+
+}
+
+#menu-card-header {
+  margin: 0;
+  padding: 0%;
+  font-weight: 700;
+  font-size: 90%;
+  font-family: arial;
+  background: darken($blue-grey, 10);
+}
+
+#menu-card-img {
+  align-self: center;
+  width: 100%;
+  height: auto;
+}
+
+#menu-card-main, #menu-card-bottom {
+  display: flex;
+  flex-direction: column;
+}
+
+#menu-card-footer {
+  margin-top: auto;
+  font-size: 70%;
+}
+
+
+/* formulär */
+
+input[type=text],
+select {
+  width: 100%;
+  padding: 0px 1%;
+  margin: 5% 1% 1% 1%;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  padding: 10px 2px;
+  margin: 5px 0;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+#form {
+  border-radius: 3px;
+  padding: 10px;
+}
+
+header {
+  display: flex;
+  justify-content: flex-end;
+  background-color: #999;
+}
+
+.fa-times,
+.fa-bars,
+.fa-angle-right{
+  color: darken($blue-grey, 30);
+  font-size: 2em;
+  padding: 0.5em;
+}
+
+/* Döljer checkboxen fär menyn*/
+
+#nav-toggle {
+  display: none;
+}
+
+#galleri input.trigger {display: none;}
+
+/* Döljer Font icon Krysset i default läge */
+
+#nav-toggle,
+.fa-times {
+  display: none;
+}
+
+/* Visar menu för  mobil i när checkboxen är icheckad */
+
+#nav-toggle:checked + #wrapper nav {
+  display: flex;
+}
+/* Döljer font icon Bar när checkboxen är icheckad */
+
+#nav-toggle:checked + #wrapper header .fa-bars {
+  display: none;
+}
+/* Visar font icon krysset när checkboxen är i checked läge */
+
+#nav-toggle:checked + #wrapper header .fa-times {
+  display: block;
+}
+
+/* Döljer menyn för mobil i default läge */
+
+ nav {
+  display: none;
+}
+
+nav ul a{
+  font-size: 1.1em;
+  display: block;
+  padding: 0.2em;
+}
+h4 {font-size: 1.5em;
+padding-bottom: .5em}
+
+/* så att de inte de visas vid megamenyn*/
+#galleri h4, #home a {display: none;}
+
+
+@media all and (min-width: 630px) {
+  /* Döljer meny trigger för desktop */
+  header > label {
+    display: none;
+  }
+  /* visar menyn för desktop */
+  nav {
+    display: block;
+  }
+  nav > ul {
+    background-color: #666;
+    width: 100%;
+    heigth: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    padding-left: 15%;
+  }
+  
+  #galleri input.trigger:checked ~ .megamenu {
+  display: flex;
+}
+  #galleri label.menu:after {
+  position: absolute;
+  width: 0; 
+  height: 0; 
+  top: 2.5em;
+  left: 11.7em;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 13px solid #888;
+  content: ""}
+  
+  #galleri input.trigger:checked ~ label.menu:after {
+  position: absolute;
+  width: 0; 
+  height: 0; 
+  top: 2.7em;
+  left: 11.7em;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 13px solid #999;
+}
+  
+  #galleri h4, #home a {display: block;}
+  /*
+  #home, #galleri {display: none;}
+  */
+  .megamenu { display: none;}
+  
+  #produkter a {
+    color: black;}
+  
+  #galleri a, #home a {
+    &:hover {color: $blue-grey}
+  }
+
+}
