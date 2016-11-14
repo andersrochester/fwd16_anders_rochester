@@ -13,6 +13,10 @@ $text: (
 
 
 // COLORS
+
+$blue-grey: rgba(118, 125, 125, 0.72);
+
+/// Color map, är inte implementerad helt ännu använder den delvis.
 $color: (
   main: #c7c7c7,
   blodred: #73270e,
@@ -27,7 +31,8 @@ $color: (
 ) !default;
 
 
-// vet ej om jag skall använda dessa 
+/// vet ej om jag skall använda dessa,
+/// det blir senare när jag gör finish på sidan
 $color-defs: (
   header: map-get($color, bright),
   header-text: map-get($color, dark),
@@ -39,13 +44,15 @@ $color-defs: (
 ) !default;
 
 //
-
+/// breakpoints, 
 $breakpoints: (
-  'phone': (min-width: 415px),
-  'tablet': (min-width: 768px),
-  'screen': (min-width: 1024px),
-  'wide-screen': (min-width: 1508px)
+  'phone': (max-width: 415px), 
+  'tablet': (max-width: 768px),
+  'screen': (max-width: 1024px),
+  'wide-screen': (max-width: 1508px)
 ) !default;
 
+/// en testvariabel, tror jag, blor obsolet när mixin för flexcard är färdig.
 $card-width: 48%;
+/// försökte utan den första / men den ville inte läsa in bilden.
 $background-pic-1: url(/images/satyr_blur.png);

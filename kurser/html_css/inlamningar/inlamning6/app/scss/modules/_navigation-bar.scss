@@ -1,31 +1,6 @@
 
 
-
-/* variables in code-pen it has to be first */
-
-$blue-grey: rgba(121, 128, 128, 0.22);
-html {
-  box-sizing: border-box;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  text-decoration: none;
-}
-
-h4 {
-  padding: 5px;
-}
-
-ul,
-li {
-  list-style: none;
-}
-
 a {
-  text-decoration: none;
   color: darken($blue-grey, 40);
   font: {
     size: 50%;
@@ -34,11 +9,8 @@ a {
 }
 
 p {
-  font: {
-    size: 75%;
-    family: verdana;
+    font-size: 75%;
   }
-}
 
 .logo { position: absolute;
 height: 3.5em;
@@ -48,15 +20,16 @@ height: 3.5em;
 
 .megamenu {
   // omsluter kortet
+  background: $blue-grey;
   position: absolute;
   margin: 0% 1% 1% 1%; // alternativt position absolute
   min-width: 315px;
   padding: 0;
   display: flex;
-  box-shadow: 3px 5px 10px darken($blue-grey,30);
-  left: 1%;
+  box-shadow: 3px 5px 10px darken($blue-grey,50);
+ 
+  top: 4em;
 }
-
 
 #fotografier {
   z-index: 200;
@@ -84,38 +57,35 @@ height: 3.5em;
   }
 }
 
-
 /*flexcard */
 
+/* anpassa korten i megamenyn med mixin nedan */
+
+@include modify-card(1, #889, 50%);
+@include change-opacity(#433, 2);
+
 #menu-card {
-  display: flex;
-  flex-grow: 1;
-  flex-direction: column;
-  margin: 1% 1% 1% 1%;
+  @extend %flexcard;
+  margin: .5% .5% .5% .5%;
   width: 25%;
   background: $blue-grey;
 }
 
-@media screen and (max-width: 416px) {
-  
-  #menu-card:nth-child(2) {
-    width: 33%;
-  }
-  #menu-card:nth-child(1), #menu-card:nth-child(3), #menu-card:nth-child(4) {
-    width: 18%;
-     & a{ color: black;
-        font-size: 110%}
-  }
-
+@include respond-to('phone') {
+  @include modify-card(1, #889, 10%);
+  @include modify-card(2, #889, 50%);
+  @include modify-card(3, #889, 20%);
+  @include modify-card(4, #889, 20%);
 }
 
 #menu-card-header {
   margin: 0;
-  padding: 0%;
+  background: darken($blue-grey, 20);
+    h4 {  
+  padding: 2%;
   font-weight: 700;
   font-size: 90%;
-  font-family: arial;
-  background: darken($blue-grey, 10);
+    }
 }
 
 #menu-card-img {
@@ -125,15 +95,13 @@ height: 3.5em;
 }
 
 #menu-card-main, #menu-card-bottom {
-  display: flex;
-  flex-direction: column;
+  @extend %flexcard;
 }
 
 #menu-card-footer {
   margin-top: auto;
   font-size: 70%;
 }
-
 
 /* formulär */
 
@@ -144,8 +112,9 @@ select {
   margin: 5% 1% 1% 1%;
   display: inline-block;
   border: 1px solid #ccc;
-  border-radius: 3px;
+  border-radius: 2px;
   box-sizing: border-box;
+  color: black;
 }
 
 input[type=submit] {
@@ -155,7 +124,7 @@ input[type=submit] {
   margin: 5px 0;
   border: none;
   color: white;
-  border-radius: 4px;
+  border-radius: 3px;
   cursor: pointer;
 }
 
@@ -164,8 +133,15 @@ input[type=submit]:hover {
 }
 
 #form {
-  border-radius: 3px;
-  padding: 10px;
+  font-family: verdana;
+  color: black;
+  border-radius: 2px;
+  padding:0;
+  margin: 0;
+  #country {
+    font-size: 80%;
+    color:darkslategray;
+  }
 }
 
 header {
@@ -175,14 +151,11 @@ header {
 }
 
 .fa-times,
-.fa-bars,
-.fa-angle-right{
+.fa-bars{
   color: darken($blue-grey, 30);
   font-size: 2em;
   padding: 0.5em;
 }
-
-/* Döljer checkboxen fär menyn*/
 
 #nav-toggle {
   display: none;
@@ -190,102 +163,79 @@ header {
 
 #galleri input.trigger {display: none;}
 
-/* Döljer Font icon Krysset i default läge */
-
 #nav-toggle,
 .fa-times {
   display: none;
 }
 
-/* Visar menu för  mobil i när checkboxen är icheckad */
-
 #nav-toggle:checked + #wrapper nav {
   display: flex;
 }
-/* Döljer font icon Bar när checkboxen är icheckad */
 
 #nav-toggle:checked + #wrapper header .fa-bars {
   display: none;
 }
-/* Visar font icon krysset när checkboxen är i checked läge */
 
 #nav-toggle:checked + #wrapper header .fa-times {
   display: block;
 }
 
-/* Döljer menyn för mobil i default läge */
-
  nav {
   display: none;
+  @media all and (min-width: 630px) {display: block;}
 }
 
-nav ul a{
-  font-size: 1.1em;
-  display: block;
-  padding: 0.2em;
+#galleri h2, #home h2 {
+  display:none;
 }
-h4 {font-size: 1.5em;
-padding-bottom: .5em}
-
-/* så att de inte de visas vid megamenyn*/
-#galleri h4, #home a {display: none;}
-
 
 @media all and (min-width: 630px) {
-  /* Döljer meny trigger för desktop */
-  header > label {
-    display: none;
-  }
-  /* visar menyn för desktop */
-  nav {
-    display: block;
-  }
+
+  header {display: none;}
+
   nav > ul {
-    background-color: #666;
+    background-color: map-get($color, background-nav );
     width: 100%;
-    heigth: auto;
+    height: 3.5em;
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
-    padding-left: 15%;
+    padding-left: 6.5em;
   }
   
   #galleri input.trigger:checked ~ .megamenu {
+  position: absolute;
+  top: 4em;
   display: flex;
 }
-  #galleri label.menu:after {
+
+
+//lite buggigt men jag tar det sen. den ursprungliga
+// upp lägger sig under samt att  den ursprungliga pilen är kvar
+
+ #galleri label.menu:after {
   position: absolute;
-  width: 0; 
-  height: 0; 
-  top: 2.5em;
-  left: 11.7em;
-  border-left: 12px solid transparent;
-  border-right: 12px solid transparent;
-  border-top: 13px solid #888;
-  content: ""}
+   @include draw-arrow(8px, #777, 'down'); 
+  top: 2.7em;
+  left: 6.7em;
+ }
   
   #galleri input.trigger:checked ~ label.menu:after {
-  position: absolute;
-  width: 0; 
-  height: 0; 
-  top: 2.7em;
-  left: 11.7em;
-  border-left: 12px solid transparent;
-  border-right: 12px solid transparent;
-  border-top: 13px solid #999;
+  @include draw-arrow(8px, #999, 'down');
 }
   
-  #galleri h4, #home a {display: block;}
-  /*
-  #home, #galleri {display: none;}
-  */
-  .megamenu { display: none;}
+  #galleri h2, #home h2 {
+    font-size: 160%;
+    margin-top: 1.5em;
+    padding: 0.3em;
+    display: block;
+  }
+ 
+  .megamenu { 
+    display: none;}
   
   #produkter a {
     color: black;}
   
-  #galleri a, #home a {
-    &:hover {color: $blue-grey}
-  }
 
 }

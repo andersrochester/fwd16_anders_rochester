@@ -9,7 +9,7 @@ html {
   box-sizing: inherit;
 }
 
-html, header, footer, body, nav, div, img, a,ul, li, h1, h2{
+html, header, footer, body, nav, div, img, a,ul, li, h1, h2, h4{
     margin: 0;
     padding: 0;
     text-decoration: none;
@@ -26,6 +26,12 @@ body{
 }
 
 p { font-family: 'Avenir Next Condensed', 'Arial Narrow', Arial, sans-serif;}
+
+h4 {
+  padding: 5px;
+  font-size: 1.5em;
+  padding-bottom: .5em;
+}
 
 
 

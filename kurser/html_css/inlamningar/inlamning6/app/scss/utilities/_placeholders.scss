@@ -1,7 +1,12 @@
+
+
+/// texten i kortet
 %card-text-padding {
   padding: 5% 3% 5% 3%;
   text-align: left;
 }
+
+/// mall för knappar
 
 %button {
   border: none;
@@ -14,3 +19,17 @@
   font-size: 16px;
   cursor: pointer;
 }
+
+/// För att rita pilar i css tillsammans med mixin arrow
+ %arrow {
+  width: 0; 
+  height: 0; 
+ }
+
+ /// Flexcard
+
+ %flexcard {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+ }

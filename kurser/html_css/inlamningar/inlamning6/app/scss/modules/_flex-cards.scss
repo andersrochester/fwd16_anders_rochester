@@ -17,10 +17,8 @@
   min-width: 100%;
   padding: 1px;
   margin-bottom: 3%;
-  // flex
-  display: flex;
-  flex-flow: column;
-  flex-grow: 1;
+  @extend %flexcard;
+
   align-content: center;
    @media screen and (min-width: 416px) {
     margin: 5 0 auto 3%;
@@ -28,8 +26,7 @@
    }
 }
 
-
-.card-title {
+.card-title { 
  @include bolder-text(28px, black);
   @media screen and (max-width: 415px) {
     @include bolder-text(22px, black);

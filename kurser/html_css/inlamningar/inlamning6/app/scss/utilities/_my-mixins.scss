@@ -37,7 +37,7 @@
 
 
 
-/// mixin for width
+/// En mixin som ändrar vart 5:e till width: 98%
 @mixin toggle-width { ///
 
 @for $i from 1 through 10 {
@@ -56,6 +56,23 @@
 }
 }
 }
+/// En mixin som går igenm alla kort för att ge dem en ökad
+/// opacitet. Man kan påverka det med faktorn och vilken ursprungsfärg.
+@mixin change-opacity($color, $factor) {
+  @for $i from 1 through 10 {
+    .card-main:nth-child(#{$i}){
+      background:rgba($color, 1/$i*$factor)};
+    }
+  }
+
+///Mixin för att anpassa korten i megamenyn. Argument: $card(vilket kort i ordningen)
+///$width (önskad width, företrädesvis i procent)
+@mixin modify-card($card, $bg, $width) {
+  #menu-card:nth-child(#{$card}) {
+    width: #{$width};
+    background: $bg;
+    } 
+    }
 
 /// mixin card-button som jag tar och snor
 @mixin card-button($bg) {
@@ -68,6 +85,28 @@
   &:active {
     background:darken($bg, 25%);
   }
+}
+
+
+
+/// Mixin som ritar en pil, argument är $size (storleken på pilen)
+/// $color (färgen på pilen)
+/// $direction ('up' eller så blir det default ned)
+@mixin draw-arrow($size, $color, $direction) {
+
+    width: 0; 
+    height: 0; 
+    content: "";
+
+  @if $direction == 'up' {
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-bottom: $size solid $color;
+    }
+  @else  {
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-top: $size solid $color;}
 }
 
 /* mixin toggle picture */
