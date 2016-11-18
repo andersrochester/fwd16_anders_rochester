@@ -1,35 +1,87 @@
 
 
-a {
-  color: darken($blue-grey, 40);
-  font: {
-    size: 50%;
-    family: verdana;
-  }
-}
-
-p {
-    font-size: 75%;
-  }
-
 .logo { position: absolute;
 height: 3.5em;
 @media all and (max-width: 416px){
   height: 4.05em;
 }}
 
+* {transition: all .4s ease;}
+
 .megamenu {
-  // omsluter kortet
-  background: $blue-grey;
-  position: absolute;
-  margin: 0% 1% 1% 1%; // alternativt position absolute
-  min-width: 315px;
-  padding: 0;
   display: flex;
-  box-shadow: 3px 5px 10px darken($blue-grey,50);
- 
-  top: 4em;
+  background: #aab;
+  flex-wrap: wrap;
+  position: absolute;
+margin: .5%;
+  top:63px;
+  width: 98%;
+  height: 75%;
+  & #menu-card a {
+    top: 1px;
+    color: #444;
+  }
+  & #menu-card:nth-child(n+1) {
+    #menu-card-footer p {
+      color: black;
+      font-size: 12px;
+    }
+    img {
+      height: 100px;
+    }
+  }
+  & #menu-card:nth-child(1) {
+   width: 35%;
+  }
+
+   & #menu-card:nth-child(2) {
+   width: 60%;
+  }
+
+  & #menu-card:nth-child(n+1):hover{
+    background: #99a;
+    img {
+      height: 120px;
+    }
+  }
+
+  @media only screen and ( min-width: 600px) and (max-width: 1900px) {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    left: 0px;
+    top: 65px;
+    width: 100%;
+    height: 60%;
+    background: blue;
+    & #menu-card:nth-child(n+1) {
+      flex: 1;
+      margin: 0;
+      border-left: 1px solid grey;
+      height: 100%;
+      #menu-card-footer p {
+        font-size: 12px;
+      }
+      #menu-card-main p {
+        width: 95%;
+      }
+      img {
+        height: 200px;
+      }
+      img[class] {
+  width: 100%;
 }
+    }
+ & #menu-card:nth-child(n+1):hover{
+    background: #99a;
+    img {
+      height: 220px;
+    }
+  }
+    
+  }
+}
+
 
 #fotografier {
   z-index: 200;
@@ -61,88 +113,59 @@ height: 3.5em;
 
 /* anpassa korten i megamenyn med mixin nedan */
 
-@include modify-card(1, #889, 50%);
 @include change-opacity(#433, 2);
 
-#menu-card {
-  @extend %flexcard;
-  margin: .5% .5% .5% .5%;
-  width: 25%;
-  background: $blue-grey;
+
+#card-main {
+  max-height: 200px;
+  display: flex;
+  flex-direction: column;
 }
 
-@include respond-to('phone') {
-  @include modify-card(1, #889, 10%);
-  @include modify-card(2, #889, 50%);
-  @include modify-card(3, #889, 20%);
-  @include modify-card(4, #889, 20%);
+#menu-card-footer {
+  margin-top: auto;
+  border-top: 1px solid black;
+}
+
+#menu-card {
+  display: flex;
+  flex-direction: column;
+  margin: .5% .5% .5% .5%;
+  width: 48%;
+  height: auto;
+  background: #aab;
+  p{color: black;}
+}
+
+#form {
+  color: black;
+  #fname, #lname { width: 90%;
+  margin: 1%;}
 }
 
 #menu-card-header {
   margin: 0;
-  background: darken($blue-grey, 20);
     h4 {  
-  padding: 2%;
+  color: black;
+  padding: 1%;
   font-weight: 700;
   font-size: 90%;
     }
 }
 
 #menu-card-img {
-  align-self: center;
-  width: 100%;
+  max-width: 100%;
   height: auto;
+  align-self: left;
 }
 
 #menu-card-main, #menu-card-bottom {
-  @extend %flexcard;
+  flex-direction: row;
+  margin: auto;
+  max-width: 100%;
+  height: auto;
 }
 
-#menu-card-footer {
-  margin-top: auto;
-  font-size: 70%;
-}
-
-/* formulär */
-
-input[type=text],
-select {
-  width: 100%;
-  padding: 0px 1%;
-  margin: 5% 1% 1% 1%;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 2px;
-  box-sizing: border-box;
-  color: black;
-}
-
-input[type=submit] {
-  width: 100%;
-  background-color: #4CAF50;
-  padding: 10px 2px;
-  margin: 5px 0;
-  border: none;
-  color: white;
-  border-radius: 3px;
-  cursor: pointer;
-}
-
-input[type=submit]:hover {
-  background-color: #45a049;
-}
-
-#form {
-  font-family: verdana;
-  color: black;
-  border-radius: 2px;
-  padding:0;
-  margin: 0;
-  #country {
-    font-size: 80%;
-    color:darkslategray;
-  }
-}
 
 header {
   display: flex;
@@ -187,7 +210,7 @@ header {
 
 #galleri h2, #home h2 {
   display:none;
-}
+} 
 
 @media all and (min-width: 630px) {
 
@@ -207,7 +230,10 @@ header {
   position: absolute;
   top: 4em;
   display: flex;
+  flex-wrap: wrap;
 }
+
+
 
 
 //lite buggigt men jag tar det sen. den ursprungliga
@@ -226,13 +252,10 @@ header {
   
   #galleri h2, #home h2 {
     font-size: 160%;
-    margin-top: 1.5em;
+    margin-top: 0.5em;
     padding: 0.3em;
     display: block;
   }
- 
-  .megamenu { 
-    display: none;}
   
   #produkter a {
     color: black;}

@@ -67,9 +67,9 @@
 
 ///Mixin för att anpassa korten i megamenyn. Argument: $card(vilket kort i ordningen)
 ///$width (önskad width, företrädesvis i procent)
-@mixin modify-card($card, $bg, $width) {
+@mixin modify-card($card, $bg, $height: auto) {
   #menu-card:nth-child(#{$card}) {
-    width: #{$width};
+    height: $height;
     background: $bg;
     } 
     }
