@@ -20,13 +20,14 @@
 @mixin page-bg($imagepath,$bgrepeat:no-repeat,$bgattachment:fixed,$bgsize:cover) {
 	
 		color: map-get($color, bright);
-  		background: map-get($color, accent1);
-        background-image: url($imagepath);
-        background-repeat: $bgrepeat;
+  	background: map-get($color, accent1);
+    background-image: url($imagepath);
+    background-repeat: $bgrepeat;
 		background-attachment:$bgattachment;
 		background-size:$bgsize;
     
 	}
+
 
   ///Mixin for buttons
   @mixin button-bg($bg) {
@@ -41,11 +42,33 @@
   } 
 }
 
-///Flexcard mixin
 
+
+///@param {integer} $num input to select a specific card. (list-item)
 @mixin select-card($num) {
 	@extend %flexcard-item;
   &:nth-child(#{$num}n) {
-    @content
+    @content;
+  }
+}
+
+///@param {integer} $num input to select cards and make them
+@mixin select-card_2($num) {
+  &:nth-child(#{$num}n) {
+    width: 66%;
+    @content;
+  }
+}
+
+///@param {integer} $start argument for startvalue in list
+///@param {integer} $end argument for endvalue (list-item)
+
+@mixin btw($start: 1, $end: 1) {
+  @for $i from $start through $end {
+    &:nth-child(#{$i}) {
+      border: 2px solid #ec4970;
+      border-radius: 10px;
+      @content;
+    }
   }
 }

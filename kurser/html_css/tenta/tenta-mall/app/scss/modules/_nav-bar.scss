@@ -1,0 +1,203 @@
+/*Allmäna regler för nav i mobilen*/	
+	
+
+
+
+
+	#nav {
+		width:100%;
+		font-size: 0.5em;
+        padding: 0;
+        text-decoration-style: none;
+        background: #916c55;
+     }
+
+/*dölj checkboxen*/
+#nav input.trigger {
+  position: absolute;
+  display:none;
+}
+
+/*allmämina reger för label tag i mobil menyn*/
+	
+	#nav label.menu {
+  position: relative;
+  display: block;
+  min-height: 2em;
+  padding: .45em;
+  font-size: 1.1em;
+  margin: 0;
+  cursor: pointer;
+  line-height: 2em;
+  color: #bfe1fb;
+}
+
+/*sätt till hamburgar ikonet och koplla med position absolute mot #nav label*/
+#nav label.menu:after {
+  position: absolute;
+  right: 1em;
+  top: .2em;
+  content: "\2261";
+  font-size: 1.8em;
+  color: white;
+}
+
+/*Visa hela menyn i mobilen när checkbox är icklickad*/
+	
+	#nav input.trigger:checked ~ ul, #nav input.trigger:checked ~ ul li ul {
+  display: block !important;
+}	
+
+/*Dölj menyn och postionera ul för att vara förälder till resten av menyn*/
+	#nav>ul{
+	display:none;
+	position: relative;
+	width:100%;
+	padding: 0.625em;
+	
+	}
+
+/*Visa huvudmenyn li med en länktagg*/
+#nav ul li a {
+  display: block;
+	color:white;
+  
+}
+
+/*Sätt textfärgen till vit i undermenyerna i megamenu och padding-lefte*/
+	
+	#nav ul.megamenu ul li a{
+	color:white;
+	padding-left: 2.500em;
+	}
+
+
+//Breakpoint
+@include respond-to('medium'){
+ 
+  /*Allmäna regler för nav i desktop*/	
+	
+#nav {
+  background: #916c55;
+  font-size: 0.50em;
+  padding: 0;
+  box-shadow: 0 0 0.625em rgba(0,0,0,1);
+  li {
+      list-style-type: none;}
+}
+  
+  	/*dölj mobil menyn*/
+  #nav label.menu { 
+    display: none;
+  }	
+  
+  /* Sätt desktop menyn med flexbox */
+
+#nav > ul {
+
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  max-width: 75.000em;
+  margin: 0 auto;
+  padding: 0;
+}
+  
+  /* second stage (the mega-menu) Sätt flex värden på själva megamenyn*/
+
+#nav ul.megamenu {
+  position: absolute;
+  display: flex;
+  flex-flow: row wrap; 
+  max-width: 1200px;
+  top: -9999px;
+  left: 0;
+  padding: 40px 40px 0 40px;
+  background: #4096ee;
+  text-align: left;
+  border-top: 5px solid #4096ee;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+  
+  /*sätt megamenyn vid hover till top positionen*/
+	
+	#nav ul li:hover ul.megamenu {
+  top: 100%;
+}
+  
+  /* third stage (child-menus in the mega-menu) SÄtt storleken på dem enskilda delarna i megamenyn till flex-basis 25%*/
+
+#nav ul.megamenu ul {
+  flex: 1 1 25%;
+  margin-bottom: 40px;
+  color: #000;
+  box-shadow: none;
+}
+  
+  /*Sätt en transition dem enskilda meny items i desktop läge*/
+	
+	#nav ul li {
+  color: #fff;
+  transition: 0.5s;
+}
+  /*Ändra färgen för den enskilda meny-items vid hover*/
+	
+	#nav > ul > li:hover {
+  background: #4096ee;
+}
+  
+  /*Visa dem innersta delen av megamenyn*/
+	
+	#nav ul.megamenu ul li {
+  display: block;
+  
+}
+  
+  /*Visa menyn med a taggen*/
+	
+	#nav a {
+  display: block;
+  color: #fff;
+}
+  
+  /*Sätt padding för dem enskilda menu-item i huvudmenyn i desktop*/
+	
+	#nav > ul > li > a {
+  padding: 15px 25px;
+}
+  
+  /*Sätt position för dropdown menyn till att vara förälder med postition:relative, samt att med :after sätt pilen till höger om meny-texten*/
+	
+	#nav ul > li.submenu > a:after {
+  position: relative;
+  float: right;
+  content: '';
+  margin-left: 10px;
+  margin-top: 8px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #fff;
+  border-bottom: 5px solid transparent;
+	
+}
+  
+  /*Ändra pilens riktning vid a:hover*/
+	
+	#nav ul > li.submenu:hover > a:after {
+  margin-top: 2px;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid #fff;
+}
+  
+  /*regler för länk i en enskild meny-item*/
+	
+	#nav ul.megamenu ul li a {
+  margin-top: 0.625em;
+  transition: 0.5s;
+  padding-left: 0;
+}
+  
+  
+  
+}

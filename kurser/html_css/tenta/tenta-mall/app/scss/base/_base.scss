@@ -14,12 +14,22 @@ html {
 // set upp body color
 body{
   color: map-get($color, bright);
-  background: map-get($color, accent1);
+  background-image: url(/images/South-Africa-Safari.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size:cover;
 }
 
 img {
   width: 100%;
   height: auto;		
+}
+
+html,header, footer, body, nav, div, img, a,ul, li, h1, h2{
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	list-style-type: none;
 }
 
 

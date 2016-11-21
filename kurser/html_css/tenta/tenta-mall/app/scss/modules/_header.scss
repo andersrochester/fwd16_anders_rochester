@@ -1,0 +1,29 @@
+
+
+
+header {
+    height: 100px;
+    background-color:#916c55;
+
+}
+
+.header__wrapper {
+    position: absolute;
+    margin: 1% 30%;
+    display: flex;
+    & .fa {
+        color: rgba(0, 0, 0, 0.6);
+        font-size: 30px;
+        padding: 5px;
+        padding-top: 15px;
+    }
+    img {width: 80px;
+        height: 70px;}
+
+    h1 { padding-left: .3em;
+        color:rgba(0, 0, 0, 0.6);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+}
+
