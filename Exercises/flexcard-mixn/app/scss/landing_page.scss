@@ -1,0 +1,24 @@
+
+@import 'utilities/utilities_index';
+@import 'base/base_index';
+
+
+@import 'modules/modules_index';
+
+body {
+    //@include bg-pic('http://media.istockphoto.com/photos/wall-picture-id500507478?s=2048x2048');
+    @include page-bg('http://media.istockphoto.com/photos/wall-picture-id500507478?s=2048x2048');
+
+    //background-image: url(http://media.istockphoto.com/photos/wall-picture-id500507478?s=2048x2048);
+    //background-color:darkgrey;
+}
+
+
+.centered {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 3em;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

@@ -38,8 +38,8 @@
 /// En mixin som ändrar vart 5:e till width: 98%
 @mixin toggle-width { ///
 
-@for $i from 1 through 10 {
-  @if $i == 5 {
+@for $i from 1 through 6 {
+  @if $i == 2 {
   .card-main:nth-child(#{$i}) {
     width: #{98%}} 
     }
@@ -68,4 +68,21 @@
   &:active {
     background:darken($bg, 25%);
   }
+}
+
+///Mixin for page background
+/// @param {url} $imagepath - set the url of the page-bg
+@mixin page-bg($imagepath,$bgrepeat:no-repeat,$bgattachment:fixed,$bgsize:cover) {
+	
+		color: map-get($color, bright);
+  	background: map-get($color, accent1);
+    background-image: url($imagepath);
+    background-repeat: $bgrepeat;
+		background-attachment:$bgattachment;
+		background-size:$bgsize;
+    
+	}
+
+@mixin bg-pic($image) {
+  background-image: url($image);
 }

@@ -20,13 +20,17 @@
 @mixin page-bg($imagepath,$bgrepeat:no-repeat,$bgattachment:fixed,$bgsize:cover) {
 	
 		color: map-get($color, bright);
-  		background: map-get($color, accent1);
-        background-image: url($imagepath);
-        background-repeat: $bgrepeat;
+  	background: map-get($color, accent1);
+    background-image: url($imagepath);
+    background-repeat: $bgrepeat;
 		background-attachment:$bgattachment;
 		background-size:$bgsize;
     
 	}
+
+@mixin bg-pic($image) {
+  background-image: url($image);
+}
 
   ///Mixin for buttons
   @mixin button-bg($bg) {
@@ -44,8 +48,6 @@
 
 
 ///Flexcard mixin
-
-%
 
 
 
