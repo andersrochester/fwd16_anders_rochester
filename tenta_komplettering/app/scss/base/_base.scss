@@ -1,0 +1,41 @@
+// Modern border-box applied everywhere.
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html, header, footer, body, nav, div, img, a,ul, p, li, h1, h2, h4{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+body{
+  color: map-get($color, bright);
+  background: map-get($color, greyish);
+  max-width: 1200px;
+}
+header { 
+  height: 4em;
+  background-color: grey;
+}
+
+p { font-family: 'Avenir Next Condensed', 'Arial Narrow', Arial, sans-serif;}
+
+h4 {
+  padding: 5px;
+  font-size: 1.5em;
+  padding-bottom: .5em;
+}
+
+
+
+
+
+

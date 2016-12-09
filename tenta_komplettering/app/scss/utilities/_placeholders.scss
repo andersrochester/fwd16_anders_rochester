@@ -1,0 +1,15 @@
+
+
+/// texten i kortet
+%card-text-padding {
+  padding: 0.5em 0.2em 0.5em 0.2em;
+  text-align: left;
+}
+
+ /// Flexcard
+
+ %flexcard {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+ }

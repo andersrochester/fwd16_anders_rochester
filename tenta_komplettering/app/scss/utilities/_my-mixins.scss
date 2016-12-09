@@ -1,0 +1,71 @@
+////
+/// Documentation of tenta_komplettering
+/// @author Anders Rochester 
+/// @group komplettering
+/// 
+////
+
+
+/* mixin title-text */
+@mixin bolder-text($size: 25px, $color: #454545) {
+  font: {family: 'Raleway', Arial, Helvetica, sans-serif;
+        size: $size;
+        weight: 800;
+        }
+  color: $color;
+}
+
+/* mixin breakpoint */
+
+@mixin respond-to($breakpoint) {
+ // If the key exists in the map
+ @if map-has-key($breakpoints, $breakpoint) {
+   // Prints a media query based on the value
+   @media #{inspect(map-get($breakpoints, $breakpoint))} {
+     @content;
+   }
+ }
+
+ // If the key doesn't exist in the map
+ @else {
+   @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+       + "Available breakpoints are: #{map-keys($breakpoints)}.";
+ }
+}
+
+
+
+/// En mixin som ändrar vart 5:e till width: 98%
+@mixin toggle-width { ///
+
+@for $i from 1 through 10 {
+  @if $i == 5 {
+  .card-main:nth-child(#{$i}) {
+    width: #{98%}} 
+    }
+  @else if $i == 10 {
+  .card-main:nth-child(#{$i}) {
+    width: #{98%}}
+  }
+  @else {
+  .card-main:nth-child(#{$i}) {
+    width: #{48%}
+  }
+}
+}
+}
+
+
+
+/// mixin card-button som jag tar och snor
+@mixin card-button($bg) {
+  @extend %button;
+  background: $bg;
+  &:hover {
+    background:darken($bg, 10%);
+    transition: all 0.4s ease;
+  }
+  &:active {
+    background:darken($bg, 25%);
+  }
+}

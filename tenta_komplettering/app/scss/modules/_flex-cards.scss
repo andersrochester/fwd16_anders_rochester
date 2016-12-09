@@ -1,0 +1,83 @@
+/* flex cards */
+
+.card-wrap {
+  border: 1px solid blue;
+  max-width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  margin-bottom: 100px;
+  @media screen and (min-width: 416px) {
+    flex-direction: row;
+  }
+}
+
+.card-main {
+  border-radius: 2px; 
+  background: rgba(140, 130, 140, .9);
+  width: 100%;
+  padding: 0.2em;
+  margin-bottom: 0.3em;
+  @extend %flexcard;
+  align-content: center;
+   @media screen and (min-width: 416px) {
+    border: 1px solid black;
+    margin: 1%;
+    width: 30%;
+    &:nth-child(2n) {
+      width: 60%;
+    }
+    }
+   }
+
+.card-title { 
+background-color: #888;
+ @include bolder-text(28px, black);
+  @media screen and (max-width: 415px) {
+    @include bolder-text(22px, black);
+  }
+  @extend %card-text-padding;
+}
+
+.card-bottom {
+  color: black; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-image {
+  margin: 0;
+  align-self: center;
+  width: 100%;
+  height: auto;
+}
+
+.card-button {
+  background: #666;
+  border-radius: 2px;
+  font-size: 1.5em;
+  font-weight: 600;
+  font-family: "Raleway", 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #73270e;
+  height: 50px;
+  margin: auto 0.2em 0.5em 0.2em;
+  padding: 0.4em;
+  text-align: center;
+  text-justify: center;
+  border: none;
+}
+
+.card-text {
+  font-family: "Raleway", 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: black;
+  font-size: 120%;
+  @extend %card-text-padding;
+}
+
+/* effekter */
+
+.card-button:hover {
+  background: rgba(125, 125, 125, 0.65);
+}

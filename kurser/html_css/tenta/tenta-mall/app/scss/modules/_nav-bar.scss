@@ -2,8 +2,6 @@
 	
 
 
-
-
 	#nav {
 		width:100%;
 		font-size: 0.5em;
@@ -20,7 +18,7 @@
 
 /*allmämina reger för label tag i mobil menyn*/
 	
-	#nav label.menu {
+#nav label.menu {
   position: relative;
   display: block;
   min-height: 2em;
@@ -189,9 +187,7 @@
   border-top: 5px solid transparent;
   border-bottom: 5px solid #fff;
 }
-  
-  /*regler för länk i en enskild meny-item*/
-	
+  	
 	#nav ul.megamenu ul li a {
   margin-top: 0.625em;
   transition: 0.5s;
