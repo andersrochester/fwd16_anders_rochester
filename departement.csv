@@ -1,8 +1,0 @@
-depID,description,category
-3000,"Starfleet leadership",Military
-3001,"Starfleet stab leadership","Military Staff"
-3100,"Starfleet school",Cadet
-3200,"Starfleet medical crew",Medical
-3400,"Engine workers",Engineer
-3900,"Ordinary crew",Worker
-3990,"Foreign passengers",Guest
